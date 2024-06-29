@@ -1,0 +1,6 @@
+{
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"],
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "compilerOptions": { "target": "es2016", "rootDir": "./src", "outDir": "./dist", "skipLibCheck": true }
+}
