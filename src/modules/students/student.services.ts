@@ -1,9 +1,20 @@
 import { student } from './student.interface';
 import StudentModel from './student.model';
+
+// ekta student db te naoar jnnw
 const studentDataToDb = async (student: student) => {
-  await StudentModel.create(student);
+  const result = await StudentModel.create(student);
+  return result;
 };
-const getStudentFromDb = async () => {
-  //get data from db
+
+// sob student k db theke anar jnnw
+const getAllStudentFromDb = async () => {
+  const result = await StudentModel.find();
+  return result;
 };
-export const StudentServices = { studentDataToDb, getStudentFromDb };
+
+const getSingleStudentFromDb = async (studentId: string) => {
+  const result = await StudentModel.find({ id: studentId });
+  return result;
+};
+export const StudentServices = { studentDataToDb, getAllStudentFromDb, getSingleStudentFromDb };
